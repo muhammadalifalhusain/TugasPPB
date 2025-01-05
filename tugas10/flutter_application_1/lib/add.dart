@@ -59,7 +59,7 @@ class _AddState extends State<Add> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Create New Note"),
+        title: const Text("Buat Catatan Baru"),
         foregroundColor: Colors.white,
       ),
       body: Form(
@@ -81,7 +81,7 @@ class _AddState extends State<Add> {
               TextFormField(
                 controller: title,
                 decoration: InputDecoration(
-                  hintText: "Type Note Title",
+                  hintText: "Judul Title",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15.0),
                   ),
@@ -115,7 +115,7 @@ class _AddState extends State<Add> {
                 minLines: 5,
                 maxLines: null,
                 decoration: InputDecoration(
-                  hintText: 'Type Note Content',
+                  hintText: 'Isi',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15.0),
                   ),
@@ -141,7 +141,7 @@ class _AddState extends State<Add> {
                   ),
                 ),
                 child: const Text(
-                  "Submit",
+                  "Kirim",
                   style: TextStyle(color: Colors.black),
                 ),
                 onPressed: () {
