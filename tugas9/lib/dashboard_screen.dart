@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'db_helper.dart';// Sesuaikan dengan nama file yang tepat
+import 'db_helper.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -12,14 +12,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   void initState() {
     super.initState();
-    _products = DatabaseHelper().getAllProducts(); // Ambil data produk
+    _products = DatabaseHelper().getAllProducts();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dashboard'),
+        title: Text('Dashboard Produk'),
       ),
       body: FutureBuilder<List<Map<String, dynamic>>>(
         future: _products,
@@ -36,7 +36,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
             return Center(child: Text('No products available'));
           }
 
-          // Menampilkan data produk dalam bentuk ListView
           var products = snapshot.data!;
           return ListView.builder(
             itemCount: products.length,
@@ -45,12 +44,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
               return Card(
                 margin: EdgeInsets.all(8),
                 child: ListTile(
-                  leading: Image.asset(product['image']), // Tampilkan gambar produk
+                  leading: Image.asset(product['image']), // Menampilkan gambar produk
                   title: Text(product['name']),
                   subtitle: Text('${product['category']} - \$${product['price']}'),
-                  onTap: () {
-                    // Tambahkan aksi yang diinginkan saat produk dipilih
-                  },
                 ),
               );
             },
