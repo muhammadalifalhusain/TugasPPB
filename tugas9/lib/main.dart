@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';  // Import sqflite_common_ffi
 import 'db_helper.dart';
 import 'dashboard_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Inisialisasi databaseFactoryFfi untuk platform desktop
+  databaseFactory = databaseFactoryFfi;
 
   // Menambahkan beberapa produk default
   final dbHelper = DatabaseHelper();
